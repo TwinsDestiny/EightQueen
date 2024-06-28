@@ -1,6 +1,6 @@
 package main;
 
-import ui.JFrameDemo;
+import ui.MyFrame;
 
 public class Main extends Thread {
 
@@ -17,7 +17,7 @@ public class Main extends Thread {
 
 	@Override
 	public void run() {
-		new JFrameDemo();
+		new MyFrame();
 	}
 
 }

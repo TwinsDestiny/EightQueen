@@ -8,9 +8,9 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-public class JFrameDemo extends JFrame {
+public class MyFrame extends JFrame {
 
-	public JFrameDemo() {
+	public MyFrame() {
 		// 设置标题
 		setTitle("八皇后全解");
 		// 设置关闭窗口
@@ -26,7 +26,7 @@ public class JFrameDemo extends JFrame {
 		int y = (screen.height - this.getHeight() >> 1) - 20;
 		this.setLocation(x, y);
 		// 创建一个JPanel的实例
-		final JPanelDemo panel = new JPanelDemo();
+		final MyPanel panel = new MyPanel();
 		// 设置无布局
 		panel.setLayout(null);
 		// 添加Panel
@@ -40,11 +40,11 @@ public class JFrameDemo extends JFrame {
 		// 添加按钮监听器
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {		
-				if (panel.x >= 92) {
+				if (panel.getIndex() >= 92) {
 					JOptionPane.showMessageDialog(null, "已显示所有解!");
-					panel.x = 0;
+					panel.setIndex(0);
 				}
-				panel.xadd();
+				panel.next();
 			}
 		});
 		setVisible(true);
